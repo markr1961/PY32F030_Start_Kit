@@ -353,6 +353,7 @@ ErrorStatus LL_SetFlashLatency(uint32_t HCLKFrequency)
   /* Frequency cannot be equal to 0 or greater than max clock */
   if ((HCLKFrequency == 0U) || (HCLKFrequency > UTILS_SCALE1_LATENCY2_FREQ))
   {
+    latency = 0;
     status = ERROR;
   }
   else

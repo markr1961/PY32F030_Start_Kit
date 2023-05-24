@@ -1,6 +1,7 @@
 ;****************************************************************************** 
-;* @file              : startup_py32f030xx.s
-;* @brief             : PY32F030xx devices vector table for EWARM toolchain.
+;* @file    startup_py32f030xx.s
+;* @author  MCU Application Team
+;* @brief   PY32F030xx devices vector table for EWARM toolchain.
 ;*                      This module performs:
 ;*                      - Set the initial SP
 ;*                      - Set the initial PC == __iar_program_start
@@ -264,4 +265,5 @@ LED_IRQHandler
         B LED_IRQHandler
         
          END
-/*****************************END OF FILE************************************/
+
+;************************ (C) COPYRIGHT Puya *****END OF FILE*******************

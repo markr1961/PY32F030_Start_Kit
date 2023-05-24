@@ -2,9 +2,21 @@
   ******************************************************************************
   * @file    system_py32f0xx.c
   * @author  MCU Application Team
-  * @Version V1.0.0
-  * @Date    2020-10-19
-  * @brief   CMSIS Cortex-M0+ Device Peripheral Access Layer System Source File.
+  * @brief   CMSIS Cortex-M0+ Device Peripheral Access Layer System Source File
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; Copyright (c) Puya Semiconductor Co.
+  * All rights reserved.</center></h2>
+  *
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
+  *
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
+  *
   ******************************************************************************
   */
 
@@ -52,9 +64,11 @@ const uint32_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8,
 const uint32_t APBPrescTable[8] =  {0, 0, 0, 0, 1, 2, 3, 4};
 const uint32_t HSIFreqTable[8] = {4000000U, 8000000U, 16000000U, 22120000U, 24000000U, 4000000U, 4000000U, 4000000U};
 
-/*----------------------------------------------------------------------------
-  Clock functions
- *----------------------------------------------------------------------------*/
+/**
+ * @brief  Clock functions.
+ * @param  none
+ * @return none
+ */
 void SystemCoreClockUpdate(void)             /* Get Core Clock Frequency      */
 {
   uint32_t tmp;
@@ -75,7 +89,7 @@ void SystemCoreClockUpdate(void)             /* Get Core Clock Frequency      */
   case RCC_CFGR_SWS_2:  /* LSE used as system clock */
     SystemCoreClock = LSE_VALUE;
     break;
-#endif
+#endif /* RCC_LSE_SUPPORT */
 #if defined(RCC_PLL_SUPPORT)
   case RCC_CFGR_SWS_1:  /* PLL used as system clock */
     if ((RCC->PLLCFGR & RCC_PLLCFGR_PLLSRC) == RCC_PLLCFGR_PLLSRC_HSI) /* HSI used as PLL clock source */
@@ -88,7 +102,7 @@ void SystemCoreClockUpdate(void)             /* Get Core Clock Frequency      */
       SystemCoreClock = 2 * HSE_VALUE;
     }
     break;
-#endif
+#endif /* RCC_PLL_SUPPORT */
   case 0x00000000U:  /* HSI used as system clock */
   default:                /* HSI used as system clock */
     hsifs = ((READ_BIT(RCC->ICSCR, RCC_ICSCR_HSI_FS)) >> RCC_ICSCR_HSI_FS_Pos);
@@ -104,13 +118,10 @@ void SystemCoreClockUpdate(void)             /* Get Core Clock Frequency      */
 }
 
 /**
- * Initialize the system
- *
- * @param  none
- * @return none
- *
  * @brief  Setup the microcontroller system.
  *         Initialize the System.
+ * @param  none
+ * @return none
  */
 void SystemInit(void)
 {
@@ -122,7 +133,7 @@ void SystemInit(void)
   SCB->VTOR = SRAM_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal SRAM */
 #else
   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
-#endif
+#endif /* VECT_TAB_SRAM */
 }
 
 #ifndef FORBID_VECT_TAB_MIGRATION
@@ -131,7 +142,11 @@ void SystemInit(void)
 extern int32_t $Super$$main(void);
 uint32_t VECT_SRAM_TAB[48]__attribute__((section(".ARM.__at_0x20000000")));
 
-/* re-define main function */
+/**
+ * @brief  re-define main function.
+ * @param  none
+ * @return int
+ */
 int $Sub$$main(void)
 {
   uint8_t i;
@@ -168,6 +183,8 @@ int __low_level_init(void)
   main();
   return 0;
 }
-#endif
-#endif
-#endif
+#endif /* __ICCARM__ */
+#endif /* VECT_TAB_SRAM */
+#endif /* FORBID_VECT_TAB_MIGRATION */
+
+/************************ (C) COPYRIGHT Puya *****END OF FILE******************/

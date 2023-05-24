@@ -1,6 +1,6 @@
 ;****************************************************************************** 
-;* @file              : startup_py32f002ax5.s
-;* @brief             : PY32F002Axx devices vector table for MDK-ARM toolchain.
+;* @file              : startup_py32f002x5.s
+;* @brief             : PY32F002xx devices vector table for MDK-ARM toolchain.
 ;*                      This module performs:
 ;*                      - Set the initial SP
 ;*                      - Set the initial PC == Reset_Handler
@@ -107,7 +107,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     0                              ; 9Reserved 
                 DCD     0                              ; 10Reserved 
                 DCD     0                              ; 11Reserved 
-                DCD     ADC_COMP_IRQHandler            ; 12ADC&COMP1 
+                DCD     ADC_IRQHandler                 ; 12ADC
                 DCD     TIM1_BRK_UP_TRG_COM_IRQHandler ; 13TIM1 Break, Update, Trigger and Commutation
                 DCD     TIM1_CC_IRQHandler             ; 14TIM1 Capture Compare
                 DCD     0                              ; 15Reserved 
@@ -178,7 +178,7 @@ Default_Handler PROC
                 EXPORT  EXTI0_1_IRQHandler             [WEAK]
                 EXPORT  EXTI2_3_IRQHandler             [WEAK]
                 EXPORT  EXTI4_15_IRQHandler            [WEAK]
-                EXPORT  ADC_COMP_IRQHandler            [WEAK]
+                EXPORT  ADC_IRQHandler                 [WEAK]
                 EXPORT  TIM1_BRK_UP_TRG_COM_IRQHandler [WEAK]
                 EXPORT  TIM1_CC_IRQHandler             [WEAK]
                 EXPORT  LPTIM1_IRQHandler              [WEAK]
@@ -192,7 +192,7 @@ RCC_IRQHandler
 EXTI0_1_IRQHandler             
 EXTI2_3_IRQHandler             
 EXTI4_15_IRQHandler   
-ADC_COMP_IRQHandler          
+ADC_IRQHandler          
 TIM1_BRK_UP_TRG_COM_IRQHandler
 TIM1_CC_IRQHandler
 LPTIM1_IRQHandler

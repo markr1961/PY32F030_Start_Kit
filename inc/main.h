@@ -15,18 +15,20 @@
 #include <intrinsics.h>   // including  __no_operation()
 // CPU specific defines
 #include "py32f0xx.h"
+// Make the HAL happy
+#include "py32f0xx_hal.h"
 
 /* Includes ------------------------------------------------------------------*/
-#include "py32f0xx_ll_rcc.h"
-#include "py32f0xx_ll_bus.h"
-#include "py32f0xx_ll_system.h"
-#include "py32f0xx_ll_exti.h"
-#include "py32f0xx_ll_cortex.h"
-#include "py32f0xx_ll_utils.h"
-#include "py32f0xx_ll_pwr.h"
-#include "py32f0xx_ll_dma.h"
-#include "py32f0xx_ll_gpio.h"
-#include "py32f0xx_ll_usart.h"
+//#include "py32f0xx_ll_rcc.h"
+//#include "py32f0xx_ll_bus.h"
+//#include "py32f0xx_ll_system.h"
+//#include "py32f0xx_ll_exti.h"
+//#include "py32f0xx_ll_cortex.h"
+//#include "py32f0xx_ll_utils.h"
+//#include "py32f0xx_ll_pwr.h"
+//#include "py32f0xx_ll_dma.h"
+//#include "py32f0xx_ll_gpio.h"
+//#include "py32f0xx_ll_usart.h"
 
 
 ///
