@@ -52,6 +52,7 @@
 #define HAL_EXTI_MODULE_ENABLED
 #define HAL_CORTEX_MODULE_ENABLED  
 #define HAL_USART_MODULE_ENABLED
+#define HAL_DMA_MODULE_ENABLED
 
 /* ########################## Oscillator Values adaptation ####################*/
 
@@ -120,11 +121,10 @@
 /**
   * @brief Include module's header file 
   */
+
 #ifdef HAL_MODULE_ENABLED
  #include "py32f0xx_hal.h"
 #endif /* HAL_MODULE_ENABLED */
-
-// #include "py32f0xx_hal_dma.h"
 
 #ifdef HAL_RCC_MODULE_ENABLED
  #include "py32f0xx_hal_rcc.h"
@@ -142,6 +142,10 @@
  #include "py32f0xx_hal_cortex.h"
 #endif /* HAL_CORTEX_MODULE_ENABLED */
 
+#ifdef HAL_DMA_MODULE_ENABLED
+  #include "py32f0xx_hal_dma.h"
+#endif /* HAL_DMA_MODULE_ENABLED */
+  
 #ifdef HAL_ADC_MODULE_ENABLED
  #include "py32f0xx_hal_adc.h"
 #endif /* HAL_ADC_MODULE_ENABLED */
@@ -170,6 +174,10 @@
  #include "py32f0xx_hal_pwr.h"
 #endif /* HAL_PWR_MODULE_ENABLED */
 
+#ifdef HAL_RTC_MODULE_ENABLED
+#include "py32f0xx_hal_rtc.h"
+#endif /* HAL_RTC_MODULE_ENABLED */
+
 #ifdef HAL_SPI_MODULE_ENABLED
  #include "py32f0xx_hal_spi.h"
 #endif /* HAL_SPI_MODULE_ENABLED */
@@ -185,6 +193,14 @@
 #ifdef HAL_UART_MODULE_ENABLED
  #include "py32f0xx_hal_uart.h"
 #endif /* HAL_UART_MODULE_ENABLED */
+
+#ifdef HAL_WWDG_MODULE_ENABLED
+#include "py32f0xx_hal_wwdg.h"
+#endif /* HAL_WWDG_MODULE_ENABLED */
+
+#ifdef HAL_LED_MODULE_ENABLED
+#include "py32f0xx_hal_led.h"
+#endif /* HAL_LED_MODULE_ENABLED */
 
 #ifdef HAL_USART_MODULE_ENABLED
  #include "py32f0xx_hal_usart.h"

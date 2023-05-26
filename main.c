@@ -5,12 +5,17 @@ void SysTick_Handler()
     HAL_IncTick();
 }
 
+bool pause;
+
 void EXTI4_15_IRQHandler(void)
 {
   if(LL_EXTI_IsActiveFlag(LL_EXTI_LINE_12))
   {
     LL_GPIO_TogglePin(GPIOA, GPIO_PIN_11);
     LL_EXTI_ClearFlag(LL_EXTI_LINE_12);
+    pause = true;
+    while (0 == LL_GPIO_IsInputPinSet(GPIOA, LL_GPIO_PIN_12))
+      ;
   }
 }
 
@@ -50,6 +55,21 @@ int main (void)
 {
     HAL_Init();
     SystemCoreClockUpdate();
+    InputGPIO();
     while(1) {
+
+      HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_11);
+      HAL_Delay(100);
+
+      if (pause)  {
+        pause = false;
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, GPIO_PIN_RESET);
+        HAL_Delay(1000);
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, GPIO_PIN_SET);
+        HAL_Delay(1000);
+      }
+
+      __WFI();
+
     }
 }

@@ -1211,9 +1211,9 @@
         </file>
     </group>
     <group>
-        <name>PY32_HAL_drivers</name>
+        <name>PY32_Drivers</name>
         <group>
-            <name>Inc</name>
+            <name>HAL_Inc</name>
             <file>
                 <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_hal.h</name>
             </file>
@@ -1283,75 +1283,9 @@
             <file>
                 <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_hal_wwdg.h</name>
             </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_adc.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_bus.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_comp.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_cortex.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_crc.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_dma.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_exti.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_flash.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_gpio.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_i2c.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_iwdg.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_led.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_lptim.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_pwr.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_rcc.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_rtc.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_spi.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_system.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_tim.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_usart.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_utils.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_wwdg.h</name>
-            </file>
         </group>
         <group>
-            <name>src</name>
+            <name>HAL_Src</name>
             <file>
                 <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Src\py32f0xx_hal.c</name>
             </file>
@@ -1430,6 +1364,78 @@
             <file>
                 <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Src\py32f0xx_hal_wwdg.c</name>
             </file>
+        </group>
+        <group>
+            <name>LL_Inc</name>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_adc.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_bus.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_comp.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_cortex.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_crc.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_dma.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_exti.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_flash.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_gpio.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_i2c.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_iwdg.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_led.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_lptim.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_pwr.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_rcc.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_rtc.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_spi.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_system.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_tim.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_usart.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_utils.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Inc\py32f0xx_ll_wwdg.h</name>
+            </file>
+        </group>
+        <group>
+            <name>LL_Src</name>
             <file>
                 <name>$PROJ_DIR$\PY32F0xx_HAL_Driver\Src\py32f0xx_ll_adc.c</name>
             </file>
