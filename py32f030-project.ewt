@@ -1207,6 +1207,9 @@
             <name>$PROJ_DIR$\inc\main.h</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\inc\pin-port.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\inc\py32f0xx_hal_conf.h</name>
         </file>
     </group>
@@ -1492,7 +1495,19 @@
     <group>
         <name>src</name>
         <file>
+            <name>$PROJ_DIR$\src\ADCInit.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\GPIOInit.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\src\SystemFaultIRQ.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\SystemIRQ.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\TimerInit.c</name>
         </file>
     </group>
     <file>

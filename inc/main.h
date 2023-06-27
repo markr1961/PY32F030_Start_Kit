@@ -13,8 +13,10 @@
 #include <string.h>       // memset, memcpy
 // needed for IAR v8.x+:
 #include <intrinsics.h>   // including  __no_operation()
+
 // CPU specific defines
 #include "py32f0xx.h"
+
 // Make the HAL happy
 #include "py32f0xx_hal.h"
 
@@ -29,7 +31,10 @@
 //#include "py32f0xx_ll_dma.h"
 #include "py32f0xx_ll_gpio.h"
 //#include "py32f0xx_ll_usart.h"
+#include "py32f0xx_ll_tim.h"
 
+extern bool bRunLoop, pause, bDmaComplete;
+extern uint32_t Seconds;
 
 ///
 // @brief DEBUG macros

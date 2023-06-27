@@ -4,17 +4,40 @@
 
 #include "main.h"
 
-void     NMI_Handler(void)
+/******************************************************************************/
+/*           Cortex-M0+ Processor Interruption and Exception Handlers         */
+/******************************************************************************/
+/**
+  * @brief This function handles Non maskable interrupt.
+  */
+void NMI_Handler(void)
+{
+  DEBUG_BREAK();
+}
+
+/**
+  * @brief This function handles Hard fault interrupt.
+  */
+void HardFault_Handler(void)
 {
   DEBUG_BREAK();
 
   exit(ERROR);
 }
 
-void HardFault_Handler(void)
+/**
+  * @brief This function handles System service call via SWI instruction.
+  */
+void SVC_Handler(void)
 {
   DEBUG_BREAK();
+}
 
-  exit(ERROR);
+/**
+  * @brief This function handles Pendable request for system service.
+  */
+void PendSV_Handler(void)
+{
+  DEBUG_BREAK();
 }
 
